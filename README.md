@@ -7,3 +7,5 @@ A4 flyer draft for donation poster / print use.
 
 ## Notes
 Designed to match the visual language of the Kakar Foundation website.
+
+- `poster.html` – visual poster draft for A2/A1 style usage
