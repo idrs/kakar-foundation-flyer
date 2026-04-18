@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kakar Foundation – Spendenflyer A4</title>
+  <style>
+    :root {
+      --brand-green: #007F48;
+      --brand-green-dark: #05633b;
+      --brand-cream: #f5f1e8;
+      --brand-text: #1f2a24;
+      --brand-muted: #5f6f66;
+      --brand-line: #d9e5de;
+      --white: #ffffff;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--brand-text);
+      background: #ececec;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--white);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      padding: 18mm 16mm 14mm;
+      color: var(--white);
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.48)),
+        url('https://kakar-foundation.com/wp-content/uploads/2025/06/kakar-foundation-spende-hilfe.jpg?id=401') center/cover no-repeat;
+      min-height: 92mm;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 8mm;
+      background: linear-gradient(90deg, var(--brand-green) 0%, #169860 100%);
+    }
+
+    .logo-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      height: 18mm;
+      width: auto;
+      background: rgba(255,255,255,0.96);
+      padding: 3.5mm 4mm;
+      border-radius: 1.5mm;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.92);
+      color: var(--brand-green);
+      font-weight: 700;
+      font-size: 11pt;
+      padding: 3mm 4mm;
+      border-radius: 1.5mm;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      margin-top: 14mm;
+      max-width: 122mm;
+    }
+
+    h1 {
+      margin: 0 0 4mm;
+      font-size: 28pt;
+      line-height: 1.06;
+      font-weight: 800;
+    }
+
+    .hero-sub {
+      margin: 0;
+      font-size: 13pt;
+      line-height: 1.5;
+      max-width: 106mm;
+    }
+
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-bottom: 1px solid var(--brand-line);
+    }
+
+    .impact-item {
+      padding: 8mm 7mm;
+      background: var(--brand-cream);
+      border-right: 1px solid var(--white);
+      text-align: center;
+    }
+
+    .impact-item:last-child { border-right: 0; }
+
+    .impact-title {
+      margin: 0 0 2mm;
+      color: var(--brand-green);
+      font-size: 11.5pt;
+      font-weight: 800;
+    }
+
+    .impact-text {
+      margin: 0;
+      font-size: 10pt;
+      line-height: 1.45;
+      color: var(--brand-text);
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 10mm;
+      padding: 12mm 16mm 10mm;
+    }
+
+    .section-title {
+      margin: 0 0 4mm;
+      color: var(--brand-green);
+      font-size: 18pt;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .lead {
+      margin: 0 0 5mm;
+      font-size: 11.3pt;
+      line-height: 1.6;
+    }
+
+    .bullets {
+      display: grid;
+      gap: 4mm;
+      margin: 7mm 0 0;
+    }
+
+    .bullet {
+      display: grid;
+      grid-template-columns: 7mm 1fr;
+      gap: 3mm;
+      align-items: start;
+    }
+
+    .bullet-dot {
+      width: 7mm;
+      height: 7mm;
+      border-radius: 50%;
+      background: var(--brand-green);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 10pt;
+      font-weight: 800;
+      margin-top: 0.5mm;
+    }
+
+    .bullet h3 {
+      margin: 0 0 1mm;
+      font-size: 11.5pt;
+      color: var(--brand-text);
+    }
+
+    .bullet p {
+      margin: 0;
+      font-size: 10.2pt;
+      line-height: 1.5;
+      color: var(--brand-muted);
+    }
+
+    .quote-box {
+      margin-top: 7mm;
+      padding: 5mm 5.5mm;
+      border-left: 4px solid var(--brand-green);
+      background: #f8fbf9;
+      font-size: 10.6pt;
+      line-height: 1.6;
+      color: var(--brand-text);
+      font-style: italic;
+    }
+
+    .donation-card {
+      border: 2px solid var(--brand-green);
+      padding: 7mm;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
+    }
+
+    .donation-card h2 {
+      margin: 0 0 3mm;
+      font-size: 20pt;
+      line-height: 1.1;
+      color: var(--brand-green);
+    }
+
+    .donation-card p {
+      margin: 0 0 5mm;
+      font-size: 10.6pt;
+      line-height: 1.55;
+    }
+
+    .amounts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3mm;
+      margin: 0 0 6mm;
+    }
+
+    .amount {
+      border: 2px solid var(--brand-green);
+      color: var(--brand-green);
+      text-align: center;
+      padding: 3.6mm 2mm;
+      font-size: 12pt;
+      font-weight: 800;
+      background: var(--white);
+    }
+
+    .qr-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 3mm;
+      margin: 4mm 0 4mm;
+    }
+
+    .qr-box {
+      width: 56mm;
+      height: 56mm;
+      background: white;
+      border: 4mm solid white;
+      outline: 1.2mm solid #d9d9d9;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .qr-note {
+      text-align: center;
+      font-size: 9.8pt;
+      color: var(--brand-muted);
+      line-height: 1.45;
+    }
+
+    .cta {
+      background: var(--brand-green);
+      color: white;
+      text-align: center;
+      padding: 4mm 4mm;
+      font-size: 12pt;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      margin-top: 2mm;
+    }
+
+    .footer {
+      padding: 0 16mm 12mm;
+    }
+
+    .footer-box {
+      background: var(--brand-text);
+      color: rgba(255,255,255,0.95);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 8mm;
+      padding: 6mm 7mm;
+      font-size: 9.6pt;
+      line-height: 1.5;
+    }
+
+    .footer-box strong {
+      color: white;
+    }
+
+    .mini-note {
+      margin-top: 3mm;
+      color: rgba(255,255,255,0.8);
+      font-size: 8.8pt;
+    }
+
+    .web {
+      color: white;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .placeholder {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px dashed rgba(255,255,255,0.45);
+      padding: 1.2mm 2mm;
+      border-radius: 1mm;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="logo-row">
+        <img class="logo" src="https://kakar-foundation.com/wp-content/uploads/2025/04/kakar-logo.svg" alt="Kakar Foundation Logo" />
+        <div class="badge">Jede Spende hilft</div>
+      </div>
+
+      <div class="hero-content">
+        <h1>Hoffnung schenken.<br />Leben verändern.</h1>
+        <p class="hero-sub">
+          Mit Ihrer Spende ermöglichen Sie Zugang zu sauberem Trinkwasser,
+          Bildung und grundlegender Gesundheitsversorgung – dort, wo Hilfe am dringendsten gebraucht wird.
+        </p>
+      </div>
+    </section>
+
+    <section class="impact-strip">
+      <div class="impact-item">
+        <p class="impact-title">Sauberes Wasser</p>
+        <p class="impact-text">Brunnenbau und nachhaltige Wasserversorgung für ganze Gemeinden.</p>
+      </div>
+      <div class="impact-item">
+        <p class="impact-title">Bildung</p>
+        <p class="impact-text">Schulplätze, Lernmaterialien und Zukunftschancen für Kinder.</p>
+      </div>
+      <div class="impact-item">
+        <p class="impact-title">Gesundheit</p>
+        <p class="impact-text">Sanitäranlagen, Hygiene und medizinische Unterstützung vor Ort.</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div>
+        <h2 class="section-title">Gemeinsam schaffen wir Veränderung</h2>
+        <p class="lead">
+          Die Kakar Foundation setzt sich für ein würdevolles Leben von Menschen in Not ein.
+          Jede Spende hilft dabei, konkrete Hilfsprojekte umzusetzen und langfristige Perspektiven zu schaffen.
+        </p>
+
+        <div class="bullets">
+          <div class="bullet">
+            <div class="bullet-dot">1</div>
+            <div>
+              <h3>Zugang zu sauberem Wasser</h3>
+              <p>Wasser ist Leben. Brunnen und Wassersysteme verhindern Krankheiten und verbessern Lebensbedingungen nachhaltig.</p>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="bullet-dot">2</div>
+            <div>
+              <h3>Schulbildung für alle</h3>
+              <p>Bildung ist der Schlüssel zu Würde und Selbstbestimmung. Kinder in Krisengebieten erhalten echte Zukunftschancen.</p>
+            </div>
+          </div>
+
+          <div class="bullet">
+            <div class="bullet-dot">3</div>
+            <div>
+              <h3>Gesundheit gezielt verbessern</h3>
+              <p>Mit Sanitäranlagen, Hygieneschulungen und medizinischer Unterstützung schaffen wir Grundlagen für eine gesündere Welt.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-box">
+          „Wenn wir gemeinsam handeln, werden aus Träumen Möglichkeiten.“
+        </div>
+      </div>
+
+      <aside class="donation-card">
+        <h2>Jetzt spenden</h2>
+        <p>
+          Scannen Sie den QR-Code und unterstützen Sie die Arbeit der
+          <strong>Kakar Foundation</strong> direkt online.
+        </p>
+
+        <div class="amounts">
+          <div class="amount">10 €</div>
+          <div class="amount">20 €</div>
+          <div class="amount">30 €</div>
+          <div class="amount">frei wählbar</div>
+        </div>
+
+        <div class="qr-wrap">
+          <div class="qr-box">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=800x800&data=https%3A%2F%2Fkakar-foundation.com%2Fspenden%2F"
+              alt="QR-Code zur Spendenseite der Kakar Foundation"
+              style="display:block; width:100%; height:100%; object-fit:contain;"
+            />
+          </div>
+          <div class="qr-note">
+            QR-Code scannen und direkt zur Spendenseite gehen:<br />
+            <strong>kakar-foundation.com/spenden/</strong>
+          </div>
+        </div>
+
+        <div class="cta">Helfen Sie mit</div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-box">
+        <div>
+          <strong>Kakar-Stiftung c/o Kakar Verwaltungs GmbH</strong><br />
+          Ganghoferstraße 39<br />
+          82216 Maisach OT Gernlinden
+          <div class="mini-note">
+            Mehr über Mission, Projekte und Wirkung erfahren Sie auf der Website.
+          </div>
+        </div>
+        <div>
+          <strong>Website</strong><br />
+          <span class="web">https://kakar-foundation.com/</span>
+          <div class="mini-note">
+            Optional ergänzbar:<br />
+            <span class="placeholder">Telefon</span>
+            <span class="placeholder">E-Mail</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
