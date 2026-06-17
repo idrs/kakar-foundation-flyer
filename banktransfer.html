@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Kakar Foundation – Spendenplakat Überweisung</title>
   <style>
     :root {
@@ -13,6 +13,7 @@
       --muted: #4f5f57;
       --line: #d7e4dc;
       --white: #ffffff;
+      --shadow: rgba(0,0,0,0.10);
     }
 
     * { box-sizing: border-box; }
@@ -22,140 +23,145 @@
       background: #ececec;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .page {
+      width: 100%;
+      padding: 12px;
     }
 
     .poster {
-      width: min(100%, 1100px);
-      aspect-ratio: 1 / 1.414;
-      margin: 24px auto;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
       background: var(--white);
-      box-shadow: 0 24px 80px rgba(0,0,0,0.12);
-      display: grid;
-      grid-template-rows: auto auto 1fr auto;
+      box-shadow: 0 20px 60px var(--shadow);
       overflow: hidden;
+      border-radius: 10px;
     }
 
     .topbar {
-      height: 16px;
+      height: 12px;
       background: linear-gradient(90deg, var(--green) 0%, #1f9d67 100%);
     }
 
     .hero {
-      padding: 36px 42px 28px;
+      padding: 24px 18px 20px;
       background: var(--cream);
       border-bottom: 1px solid var(--line);
     }
 
     .brand {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 28px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
     .logo-wrap {
       display: inline-flex;
       align-items: center;
       background: white;
-      padding: 12px 16px;
+      padding: 10px 12px;
       border-radius: 8px;
       border: 1px solid #e8ece9;
+      max-width: 100%;
     }
 
     .logo-wrap img {
-      height: 48px;
+      height: 34px;
+      max-width: 100%;
       display: block;
       width: auto;
     }
 
     .tag {
       color: var(--green);
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-align: right;
+      letter-spacing: 0.4px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(52px, 6vw, 86px);
-      line-height: 0.96;
-      letter-spacing: -1px;
+      font-size: clamp(34px, 9vw, 84px);
+      line-height: 0.98;
+      letter-spacing: -0.8px;
       font-weight: 900;
       max-width: 840px;
-      text-wrap: balance;
     }
 
     .sub {
-      margin: 18px 0 0;
+      margin: 14px 0 0;
       max-width: 760px;
-      font-size: clamp(20px, 1.9vw, 29px);
-      line-height: 1.35;
+      font-size: clamp(17px, 4.2vw, 28px);
+      line-height: 1.38;
       color: var(--muted);
     }
 
     .highlights {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       border-bottom: 1px solid var(--line);
     }
 
     .highlight {
-      padding: 28px 24px;
-      text-align: center;
-      border-right: 1px solid var(--line);
+      padding: 20px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
       background: #fcfcfb;
     }
 
-    .highlight:last-child { border-right: 0; }
+    .highlight:last-child { border-bottom: 0; }
 
     .highlight .value {
       color: var(--green);
-      font-size: clamp(25px, 2.2vw, 34px);
+      font-size: clamp(24px, 6vw, 34px);
       font-weight: 900;
       line-height: 1.05;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .highlight .desc {
       color: var(--muted);
-      font-size: clamp(15px, 1.2vw, 19px);
-      line-height: 1.35;
+      font-size: clamp(15px, 4vw, 19px);
+      line-height: 1.4;
     }
 
     .main {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
-      gap: 28px;
-      padding: 34px 42px;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      padding: 22px 18px;
       align-items: start;
     }
 
     .left h2,
     .right h2 {
-      margin: 0 0 16px;
-      font-size: clamp(28px, 2.4vw, 38px);
-      line-height: 1.05;
+      margin: 0 0 14px;
+      font-size: clamp(25px, 6vw, 38px);
+      line-height: 1.08;
       color: var(--green);
       font-weight: 900;
     }
 
     .left p {
-      margin: 0 0 20px;
-      font-size: clamp(17px, 1.4vw, 23px);
-      line-height: 1.5;
+      margin: 0 0 16px;
+      font-size: clamp(16px, 4.2vw, 22px);
+      line-height: 1.55;
       color: var(--text);
     }
 
     .quote {
-      margin-top: 28px;
-      padding: 18px 20px;
-      border-left: 6px solid var(--green);
+      margin-top: 20px;
+      padding: 16px 16px;
+      border-left: 5px solid var(--green);
       background: #f8fbf9;
-      font-size: clamp(19px, 1.5vw, 24px);
-      line-height: 1.45;
+      font-size: clamp(17px, 4.5vw, 23px);
+      line-height: 1.5;
       color: var(--text);
       font-style: italic;
     }
@@ -163,26 +169,26 @@
     .transfer-box {
       border: 3px solid var(--green);
       background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
-      padding: 24px;
+      padding: 18px 16px;
     }
 
     .transfer-lead {
-      margin: 0 0 18px;
-      font-size: clamp(18px, 1.4vw, 22px);
+      margin: 0 0 16px;
+      font-size: clamp(16px, 4vw, 21px);
       line-height: 1.45;
       color: var(--text);
     }
 
     .bank-table {
       display: grid;
-      gap: 12px;
-      margin: 18px 0 0;
+      gap: 10px;
+      margin: 14px 0 0;
     }
 
     .bank-row {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 12px;
+      grid-template-columns: 1fr;
+      gap: 5px;
       align-items: start;
       padding: 10px 0;
       border-bottom: 1px solid var(--line);
@@ -193,164 +199,195 @@
     .label {
       color: var(--green);
       font-weight: 800;
-      font-size: 16px;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
     }
 
     .data {
-      font-size: clamp(18px, 1.5vw, 25px);
-      line-height: 1.35;
+      font-size: clamp(17px, 4.2vw, 24px);
+      line-height: 1.4;
       font-weight: 700;
       word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     .note {
-      margin-top: 18px;
-      font-size: clamp(15px, 1.15vw, 18px);
-      line-height: 1.45;
+      margin-top: 16px;
+      font-size: clamp(14px, 3.7vw, 17px);
+      line-height: 1.5;
       color: var(--muted);
     }
 
     .footer {
       background: var(--green);
       color: white;
-      padding: 22px 42px 28px;
+      padding: 18px 18px 22px;
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: end;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: start;
     }
 
     .footer-main {
-      font-size: clamp(20px, 1.6vw, 28px);
+      font-size: clamp(20px, 5vw, 28px);
       font-weight: 900;
       line-height: 1.2;
     }
 
     .footer-sub {
-      margin-top: 8px;
-      font-size: clamp(15px, 1.1vw, 18px);
-      line-height: 1.4;
+      margin-top: 6px;
+      font-size: clamp(14px, 3.8vw, 18px);
+      line-height: 1.45;
       color: rgba(255,255,255,0.92);
     }
 
     .web {
-      text-align: right;
-      font-size: clamp(16px, 1.2vw, 20px);
+      font-size: clamp(15px, 3.9vw, 20px);
       font-weight: 700;
       line-height: 1.4;
+      word-break: break-word;
     }
 
-    @media (max-width: 900px) {
-      .highlights,
-      .main,
-      .footer {
-        grid-template-columns: 1fr;
+    @media (min-width: 760px) {
+      .page { padding: 20px; }
+      .hero { padding: 36px 42px 28px; }
+      .brand {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 28px;
       }
-      .highlight { border-right: 0; border-bottom: 1px solid var(--line); }
-      .highlight:last-child { border-bottom: 0; }
-      .web { text-align: left; }
-      .bank-row { grid-template-columns: 1fr; gap: 6px; }
+      .logo-wrap img { height: 48px; }
+      .tag { text-align: right; font-size: 15px; }
+      .highlights {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .highlight {
+        text-align: center;
+        padding: 28px 24px;
+        border-bottom: 0;
+        border-right: 1px solid var(--line);
+      }
+      .highlight:last-child { border-right: 0; }
+      .main {
+        grid-template-columns: 1fr 0.95fr;
+        gap: 28px;
+        padding: 34px 42px;
+      }
+      .bank-row {
+        grid-template-columns: 120px 1fr;
+        gap: 12px;
+      }
+      .footer {
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        align-items: end;
+        padding: 22px 42px 28px;
+      }
+      .web { text-align: right; }
     }
   </style>
 </head>
 <body>
-  <main class="poster">
-    <div class="topbar"></div>
+  <div class="page">
+    <main class="poster">
+      <div class="topbar"></div>
 
-    <section class="hero">
-      <div class="brand">
-        <div class="logo-wrap">
-          <img src="https://kakar-foundation.com/wp-content/uploads/2025/04/kakar-logo.svg" alt="Kakar Foundation" />
+      <section class="hero">
+        <div class="brand">
+          <div class="logo-wrap">
+            <img src="https://kakar-foundation.com/wp-content/uploads/2025/04/kakar-logo.svg" alt="Kakar Foundation" />
+          </div>
+          <div class="tag">Jede Spende hilft</div>
         </div>
-        <div class="tag">Jede Spende hilft</div>
-      </div>
 
-      <h1>Spenden.<br />Ganz einfach per Überweisung.</h1>
-      <p class="sub">
-        Ihre Unterstützung schenkt Hoffnung, sauberes Trinkwasser, Bildung und eine bessere Zukunft.
-        Jeder Beitrag zählt.
-      </p>
-    </section>
-
-    <section class="highlights">
-      <div class="highlight">
-        <div class="value">Sauberes Wasser</div>
-        <div class="desc">Brunnenbau und nachhaltige Versorgung für Gemeinden.</div>
-      </div>
-      <div class="highlight">
-        <div class="value">Bildung</div>
-        <div class="desc">Schulplätze und Lernmaterialien für Kinder in Krisengebieten.</div>
-      </div>
-      <div class="highlight">
-        <div class="value">Gesundheit</div>
-        <div class="desc">Sanitäranlagen, Hygiene und konkrete Hilfe vor Ort.</div>
-      </div>
-    </section>
-
-    <section class="main">
-      <div class="left">
-        <h2>Ihre Hilfe kommt an</h2>
-        <p>
-          Mit jeder Überweisung helfen Sie dort, wo Unterstützung am dringendsten gebraucht wird.
-          Die Kakar Foundation setzt konkrete Hilfsprojekte um und schafft langfristige Perspektiven.
+        <h1>Spenden.<br />Ganz einfach per Überweisung.</h1>
+        <p class="sub">
+          Ihre Unterstützung schenkt Hoffnung, sauberes Trinkwasser, Bildung und eine bessere Zukunft.
+          Jeder Beitrag zählt.
         </p>
-        <p>
-          Ob kleiner Beitrag oder größere Spende: Sie machen den Unterschied.
-        </p>
+      </section>
 
-        <div class="quote">
-          „Wenn wir gemeinsam handeln, werden aus Träumen Möglichkeiten.“
+      <section class="highlights">
+        <div class="highlight">
+          <div class="value">Sauberes Wasser</div>
+          <div class="desc">Brunnenbau und nachhaltige Versorgung für Gemeinden.</div>
         </div>
-      </div>
+        <div class="highlight">
+          <div class="value">Bildung</div>
+          <div class="desc">Schulplätze und Lernmaterialien für Kinder in Krisengebieten.</div>
+        </div>
+        <div class="highlight">
+          <div class="value">Gesundheit</div>
+          <div class="desc">Sanitäranlagen, Hygiene und konkrete Hilfe vor Ort.</div>
+        </div>
+      </section>
 
-      <div class="right">
-        <div class="transfer-box">
-          <h2>Jetzt per Überweisung spenden</h2>
-          <p class="transfer-lead">
-            Nutzen Sie die folgenden Bankdaten für Ihre Spende.
+      <section class="main">
+        <div class="left">
+          <h2>Ihre Hilfe kommt an</h2>
+          <p>
+            Mit jeder Überweisung helfen Sie dort, wo Unterstützung am dringendsten gebraucht wird.
+            Die Kakar Foundation setzt konkrete Hilfsprojekte um und schafft langfristige Perspektiven.
+          </p>
+          <p>
+            Ob kleiner Beitrag oder größere Spende: Sie machen den Unterschied.
           </p>
 
-          <div class="bank-table">
-            <div class="bank-row">
-              <div class="label">Empfänger</div>
-              <div class="data">[Empfängername einfügen]</div>
-            </div>
-            <div class="bank-row">
-              <div class="label">IBAN</div>
-              <div class="data">[IBAN einfügen]</div>
-            </div>
-            <div class="bank-row">
-              <div class="label">BIC</div>
-              <div class="data">[BIC einfügen]</div>
-            </div>
-            <div class="bank-row">
-              <div class="label">Bank</div>
-              <div class="data">[Bankname einfügen]</div>
-            </div>
-            <div class="bank-row">
-              <div class="label">Verwendungszweck</div>
-              <div class="data">Spende Kakar Foundation</div>
-            </div>
-          </div>
-
-          <div class="note">
-            Optional kann zusätzlich ein QR-Code zur Spendenseite oder ein GiroCode für Banking-Apps ergänzt werden.
+          <div class="quote">
+            „Wenn wir gemeinsam handeln, werden aus Träumen Möglichkeiten.“
           </div>
         </div>
-      </div>
-    </section>
 
-    <footer class="footer">
-      <div>
-        <div class="footer-main">Kakar Foundation</div>
-        <div class="footer-sub">
-          Hoffnung schenken. Zukunft ermöglichen.
+        <div class="right">
+          <div class="transfer-box">
+            <h2>Jetzt per Überweisung spenden</h2>
+            <p class="transfer-lead">
+              Nutzen Sie die folgenden Bankdaten für Ihre Spende.
+            </p>
+
+            <div class="bank-table">
+              <div class="bank-row">
+                <div class="label">Empfänger</div>
+                <div class="data">[Empfängername einfügen]</div>
+              </div>
+              <div class="bank-row">
+                <div class="label">IBAN</div>
+                <div class="data">[IBAN einfügen]</div>
+              </div>
+              <div class="bank-row">
+                <div class="label">BIC</div>
+                <div class="data">[BIC einfügen]</div>
+              </div>
+              <div class="bank-row">
+                <div class="label">Bank</div>
+                <div class="data">[Bankname einfügen]</div>
+              </div>
+              <div class="bank-row">
+                <div class="label">Verwendungszweck</div>
+                <div class="data">Spende Kakar Foundation</div>
+              </div>
+            </div>
+
+            <div class="note">
+              Optional kann zusätzlich ein QR-Code zur Spendenseite oder ein GiroCode für Banking-Apps ergänzt werden.
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="web">kakar-foundation.com</div>
-    </footer>
-  </main>
+      </section>
+
+      <footer class="footer">
+        <div>
+          <div class="footer-main">Kakar Foundation</div>
+          <div class="footer-sub">
+            Hoffnung schenken. Zukunft ermöglichen.
+          </div>
+        </div>
+        <div class="web">kakar-foundation.com</div>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
