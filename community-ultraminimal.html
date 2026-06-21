@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kakar Foundation – Ultraminimales Spendenplakat</title>
+  <style>
+    :root {
+      --green: #007F48;
+      --cream: #f5f1e8;
+      --text: #142019;
+      --muted: #52635a;
+      --white: #ffffff;
+    }
+
+    @page { margin: 0; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: white;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+    }
+
+    .poster {
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      background: white;
+    }
+
+    .topbar {
+      height: 18mm;
+      background: linear-gradient(90deg, var(--green) 0%, #1f9d67 100%);
+    }
+
+    .hero {
+      padding: 28mm 30mm 18mm;
+      background: var(--cream);
+      border-bottom: 1mm solid #d8e4dd;
+    }
+
+    .brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16mm;
+      margin-bottom: 22mm;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      padding: 8mm 10mm;
+      border: 0.4mm solid #e8ece9;
+    }
+
+    .logo-wrap img {
+      height: 18mm;
+      display: block;
+      width: auto;
+    }
+
+    .tag {
+      color: var(--green);
+      font-size: 15pt;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 64pt;
+      line-height: 0.96;
+      letter-spacing: -1.4px;
+      font-weight: 900;
+      max-width: 560mm;
+    }
+
+    .sub {
+      margin: 12mm 0 0;
+      font-size: 24pt;
+      line-height: 1.35;
+      color: var(--muted);
+      max-width: 420mm;
+    }
+
+    .center {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 26mm;
+      align-items: center;
+      padding: 24mm 30mm 26mm;
+    }
+
+    .left {
+      display: grid;
+      gap: 10mm;
+    }
+
+    .pill {
+      display: inline-block;
+      width: fit-content;
+      background: var(--green);
+      color: white;
+      padding: 5mm 8mm;
+      font-size: 18pt;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .focus {
+      font-size: 30pt;
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .small {
+      font-size: 18pt;
+      line-height: 1.45;
+      color: var(--muted);
+      max-width: 260mm;
+    }
+
+    .qr-panel {
+      border: 1.4mm solid var(--green);
+      padding: 16mm;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
+      display: grid;
+      justify-items: center;
+      gap: 10mm;
+      text-align: center;
+    }
+
+    .qr-panel h2 {
+      margin: 0;
+      color: var(--green);
+      font-size: 30pt;
+      line-height: 1.05;
+      font-weight: 900;
+    }
+
+    .qr-shell {
+      width: 105mm;
+      background: white;
+      padding: 5mm;
+      border: 0.5mm solid #d8e4dd;
+    }
+
+    .qr-shell img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: block;
+      object-fit: contain;
+    }
+
+    .iban {
+      font-size: 21pt;
+      line-height: 1.35;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .purpose {
+      font-size: 17pt;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .footer {
+      background: var(--green);
+      color: white;
+      padding: 14mm 30mm 16mm;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16mm;
+      align-items: end;
+    }
+
+    .footer-main {
+      font-size: 20pt;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .footer-sub {
+      margin-top: 3mm;
+      font-size: 13pt;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .web {
+      text-align: right;
+      font-size: 14pt;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <div class="topbar"></div>
+
+    <section class="hero">
+      <div class="brand">
+        <div class="logo-wrap">
+          <img src="https://kakar-foundation.com/wp-content/uploads/2025/04/kakar-logo.svg" alt="Kakar Foundation" />
+        </div>
+        <div class="tag">Gemeinsam Gemeinde stärken</div>
+      </div>
+
+      <h1>Spende für Gemeinde und Bildung.</h1>
+      <p class="sub">Scannen. Überweisen. Unterstützen.</p>
+    </section>
+
+    <section class="center">
+      <div class="left">
+        <div class="pill">Ihre Spende wirkt vor Ort</div>
+        <div class="focus">Gemeinschaft<br />Bildung<br />Kultur</div>
+        <div class="small">
+          Unterstützen Sie mit Ihrer Spende das Gemeindeleben, Bildungsangebote und kulturelle Aktivitäten.
+        </div>
+      </div>
+
+      <div class="qr-panel">
+        <h2>Banking-QR</h2>
+        <div class="qr-shell">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=1200x1200&data=BCD%0A002%0A1%0ASCT%0ABYLADEM1KMS%0AKakar-Stiftung%0ADE44702501500023800535%0AEUR0%0A%0ASpende%20Gemeinde"
+            alt="Banking-QR für die Überweisung an die Kakar-Stiftung"
+          />
+        </div>
+        <div class="iban">IBAN: DE44 7025 0150 0023 8005 35</div>
+        <div class="purpose">Verwendungszweck: Spende Gemeinde</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <div class="footer-main">Kakar Foundation</div>
+        <div class="footer-sub">Für Gemeinde, Gemeinschaft, Bildung und kulturelles Leben.</div>
+      </div>
+      <div class="web">kakar-foundation.com</div>
+    </footer>
+  </main>
+</body>
+</html>
