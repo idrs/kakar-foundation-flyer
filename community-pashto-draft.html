@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ps" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Kakar Foundation – Pashto Draft</title>
+  <style>
+    :root {
+      --green: #007F48;
+      --cream: #f5f1e8;
+      --text: #142019;
+      --muted: #52635a;
+      --line: #d8e4dd;
+      --white: #ffffff;
+      --shadow: rgba(0,0,0,0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #ececec;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .page {
+      width: 100%;
+      padding: 12px;
+    }
+
+    .poster {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 20px 60px var(--shadow);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .topbar {
+      height: 12px;
+      background: linear-gradient(90deg, var(--green) 0%, #1f9d67 100%);
+    }
+
+    .hero {
+      padding: 24px 18px 22px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #e8ece9;
+      max-width: 100%;
+    }
+
+    .logo-wrap img {
+      height: 34px;
+      width: auto;
+      display: block;
+      max-width: 100%;
+    }
+
+    .tag {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      text-align: right;
+      width: 100%;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 8.8vw, 82px);
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .sub {
+      margin: 14px 0 0;
+      max-width: 860px;
+      font-size: clamp(17px, 4.2vw, 28px);
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .areas {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .area {
+      padding: 20px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fcfcfb;
+    }
+
+    .area:last-child { border-bottom: 0; }
+
+    .area-title {
+      color: var(--green);
+      font-size: clamp(24px, 5.8vw, 34px);
+      line-height: 1.15;
+      font-weight: 900;
+      margin: 0 0 8px;
+    }
+
+    .area-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(15px, 4vw, 19px);
+      line-height: 1.7;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      padding: 22px 18px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: clamp(25px, 6vw, 38px);
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    .quote {
+      margin-top: 18px;
+      padding: 16px;
+      border-right: 5px solid var(--green);
+      background: #f8fbf9;
+      font-size: clamp(17px, 4.4vw, 23px);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .transfer-box {
+      border: 3px solid var(--green);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
+      padding: 18px 16px;
+    }
+
+    .transfer-lead {
+      margin: 0 0 14px;
+      font-size: clamp(16px, 4vw, 21px);
+      line-height: 1.75;
+    }
+
+    .bank-table {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .bank-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bank-row:last-child { border-bottom: 0; }
+
+    .label {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+
+    .data {
+      font-size: clamp(17px, 4.2vw, 24px);
+      line-height: 1.6;
+      font-weight: 700;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .qr-block {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .qr-shell {
+      width: min(100%, 220px);
+      background: white;
+      padding: 10px;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .qr-shell img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: block;
+      object-fit: contain;
+      background: white;
+    }
+
+    .qr-caption, .hint {
+      font-size: clamp(14px, 3.7vw, 17px);
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .footer {
+      background: var(--green);
+      color: white;
+      padding: 18px 18px 22px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .footer-main {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .footer-sub {
+      margin-top: 6px;
+      font-size: clamp(14px, 3.8vw, 18px);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .web {
+      font-size: clamp(15px, 3.9vw, 20px);
+      font-weight: 700;
+      line-height: 1.4;
+      word-break: break-word;
+      direction: ltr;
+      text-align: left;
+    }
+
+    @media (min-width: 760px) {
+      .page { padding: 20px; }
+      .hero { padding: 36px 42px 28px; }
+      .brand {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+      .logo-wrap img { height: 48px; }
+      .tag { font-size: 15px; }
+      .areas {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .area {
+        padding: 28px 24px;
+        border-bottom: 0;
+        border-left: 1px solid var(--line);
+      }
+      .area:last-child { border-left: 0; }
+      .main {
+        grid-template-columns: 1fr 0.95fr;
+        gap: 28px;
+        padding: 34px 42px;
+      }
+      .bank-row {
+        grid-template-columns: 120px 1fr;
+        gap: 12px;
+      }
+      .footer {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 20px;
+        padding: 22px 42px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="poster">
+      <div class="topbar"></div>
+
+      <section class="hero">
+        <div class="brand">
+          <div class="logo-wrap">
+            <img src="https://kakar-foundation.com/wp-content/uploads/2025/04/kakar-logo.svg" alt="Kakar Foundation" />
+          </div>
+          <div class="tag">په ګډه ټولنه پیاوړې کړو</div>
+        </div>
+
+        <h1>ستاسو مرسته ټولنه، زده کړه او د ټولنې ژوند پیاوړی کوي.</h1>
+        <p class="sub">
+          ستاسو په ملاتړ سره په سیمه کې کلتوري، ښوونیز او ټولنیز ژوند پیاوړی کېږي.
+          ستاسو مرسته نېغ په نېغه ټولنې ته رسېږي.
+        </p>
+      </section>
+
+      <section class="areas">
+        <div class="area">
+          <h2 class="area-title">ټولنه</h2>
+          <p class="area-text">
+            د قوي یووالي، روانو فعالیتونو او د لیدنې او ناستې لپاره د باور وړ ځای لپاره.
+          </p>
+        </div>
+        <div class="area">
+          <h2 class="area-title">زده کړه</h2>
+          <p class="area-text">
+            د ښوونیزو پروګرامونو، د ماشومانو او ځوانانو د زده کړې او د پوهې او ارزښتونو د لېږد لپاره.
+          </p>
+        </div>
+        <div class="area">
+          <h2 class="area-title">کلتور او ټولنه</h2>
+          <p class="area-text">
+            د ګډو پروګرامونو، ټولنیزو فعالیتونو او د ژوندي یووالي لپاره.
+          </p>
+        </div>
+      </section>
+
+      <section class="main">
+        <div class="quote">
+          «هره مرسته د یوې ژوندۍ ټولنې او د پیاوړي راتلونکي لپاره یو ارزښتناک ګام دی.»
+        </div>
+
+        <div class="transfer-box">
+          <h2 class="section-title">د بانکي لېږد له لارې مرسته</h2>
+          <p class="transfer-lead">
+            که تاسو غواړئ د Kakar Foundation د ټولنې، یووالي، زده کړې او کلتور لپاره مرسته وکړئ،
+            مهرباني وکړئ لاندې بانکي معلومات وکاروئ.
+          </p>
+
+          <div class="bank-table">
+            <div class="bank-row">
+              <div class="label">ترلاسه کوونکی</div>
+              <div class="data">Kakar-Stiftung</div>
+            </div>
+            <div class="bank-row">
+              <div class="label">IBAN</div>
+              <div class="data">DE44 7025 0150 0023 8005 35</div>
+            </div>
+            <div class="bank-row">
+              <div class="label">BIC</div>
+              <div class="data">BYLADEM1KMS</div>
+            </div>
+            <div class="bank-row">
+              <div class="label">بانک</div>
+              <div class="data">Kreissparkasse München Starnberg Ebersberg</div>
+            </div>
+            <div class="bank-row">
+              <div class="label">موخه</div>
+              <div class="data">Spende Gemeinde</div>
+            </div>
+          </div>
+
+          <div class="qr-block">
+            <div class="qr-shell">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=800x800&data=BCD%0A002%0A1%0ASCT%0ABYLADEM1KMS%0AKakar-Stiftung%0ADE44702501500023800535%0AEUR0%0A%0ASpende%20Gemeinde"
+                alt="Banking QR"
+              />
+            </div>
+            <div class="qr-caption">
+              د بانکي اپلېکېشن له لارې QR کوډ وڅېړئ او د لېږد معلومات په مستقیم ډول واخلئ.
+            </div>
+          </div>
+
+          <div class="hint">
+            په بدیل ډول، تاسو کولی شئ مرسته په لاسي ډول هم د پورته بانکي معلوماتو له لارې ترسره کړئ.
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>
+          <div class="footer-main">Kakar Foundation</div>
+          <div class="footer-sub">
+            د ټولنې، یووالي، زده کړې او کلتوري ژوند لپاره.
+          </div>
+        </div>
+        <div class="web">kakar-foundation.com</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

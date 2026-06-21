@@ -22,3 +22,4 @@ Designed to match the visual language of the Kakar Foundation website.
 - `kakar-poster-community-ultraminimal-a0.pdf` – ultra-minimal print PDF in DIN A0
 - `kakar-poster-community-ultraminimal-a1.pdf` – ultra-minimal print PDF in DIN A1
 - `kakar-poster-community-ultraminimal-a2.pdf` – ultra-minimal print PDF in DIN A2
+- `community-pashto-draft.html` – Pashto draft for review before print export
