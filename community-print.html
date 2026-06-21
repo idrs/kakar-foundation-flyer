@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Kakar Foundation – Gemeindeplakat Druckversion</title>
+  <style>
+    :root {
+      --green: #007F48;
+      --green-dark: #055c37;
+      --cream: #f5f1e8;
+      --text: #142019;
+      --muted: #52635a;
+      --line: #d8e4dd;
+      --white: #ffffff;
+    }
+
+    @page { margin: 0; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: white;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .poster {
+      width: 100%;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .topbar {
+      height: 18mm;
+      background: linear-gradient(90deg, var(--green) 0%, #1f9d67 100%);
+    }
+
+    .hero {
+      padding: 38mm 34mm 26mm;
+      background: var(--cream);
+      border-bottom: 1mm solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20mm;
+      margin-bottom: 26mm;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      padding: 8mm 10mm;
+      border: 0.4mm solid #e8ece9;
+    }
+
+    .logo-wrap img {
+      height: 20mm;
+      width: auto;
+      display: block;
+    }
+
+    .tag {
+      color: var(--green);
+      font-size: 15pt;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 54pt;
+      line-height: 0.98;
+      letter-spacing: -1.2px;
+      font-weight: 900;
+      max-width: 540mm;
+    }
+
+    .sub {
+      margin: 14mm 0 0;
+      max-width: 430mm;
+      font-size: 22pt;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .areas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1mm solid var(--line);
+    }
+
+    .area {
+      padding: 22mm 20mm;
+      border-right: 1mm solid var(--line);
+      background: #fcfcfb;
+    }
+
+    .area:last-child { border-right: 0; }
+
+    .area-title {
+      color: var(--green);
+      font-size: 24pt;
+      line-height: 1.05;
+      font-weight: 900;
+      margin: 0 0 6mm;
+    }
+
+    .area-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15pt;
+      line-height: 1.45;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24mm;
+      padding: 28mm 34mm 30mm;
+      align-items: start;
+    }
+
+    .quote {
+      padding: 14mm 14mm 14mm 16mm;
+      border-left: 3mm solid var(--green);
+      background: #f8fbf9;
+      font-size: 23pt;
+      line-height: 1.45;
+      font-style: italic;
+    }
+
+    .transfer-box {
+      border: 1.3mm solid var(--green);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
+      padding: 18mm;
+    }
+
+    .section-title {
+      margin: 0 0 8mm;
+      color: var(--green);
+      font-size: 28pt;
+      line-height: 1.06;
+      font-weight: 900;
+    }
+
+    .transfer-lead {
+      margin: 0 0 10mm;
+      font-size: 15pt;
+      line-height: 1.45;
+    }
+
+    .bank-table {
+      display: grid;
+      gap: 7mm;
+      margin-top: 8mm;
+    }
+
+    .bank-row {
+      display: grid;
+      grid-template-columns: 42mm 1fr;
+      gap: 8mm;
+      padding: 5mm 0;
+      border-bottom: 0.4mm solid var(--line);
+      align-items: start;
+    }
+
+    .bank-row:last-child { border-bottom: 0; }
+
+    .label {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .data {
+      font-size: 17pt;
+      line-height: 1.38;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .qr-block {
+      margin-top: 14mm;
+      padding-top: 12mm;
+      border-top: 0.4mm solid var(--line);
+      display: grid;
+      grid-template-columns: 70mm 1fr;
+      align-items: center;
+      gap: 12mm;
+    }
+
+    .qr-shell {
+      width: 70mm;
+      background: white;
+      padding: 4mm;
+      border: 0.4mm solid var(--line);
+    }
+
+    .qr-shell img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: block;
+      object-fit: contain;
+      background: white;
+    }
+
+    .qr-caption {
+      font-size: 15pt;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+
+    .hint {
+      margin-top: 10mm;
+      color: var(--muted);
+      font-size: 13pt;
+      line-height: 1.45;
+    }
+
+    .footer {
+      background: var(--green);
+      color: white;
+      padding: 16mm 34mm 18mm;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16mm;
+      align-items: end;
+    }
+
+    .footer-main {
+      font-size: 22pt;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .footer-sub {
+      margin-top: 4mm;
+      font-size: 13pt;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .web {
+      text-align: right;
+      font-size: 14pt;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <div class="topbar"></div>
+
+    <section class="hero">
+      <div class="brand">
+        <div class="logo-wrap">
+          <img src="https://kakar-foundation.com/wp-content/uploads/2025/04/kakar-logo.svg" alt="Kakar Foundation" />
+        </div>
+        <div class="tag">Gemeinsam Gemeinde stärken</div>
+      </div>
+
+      <h1>Ihre Spende stärkt Gemeinschaft, Bildung und Gemeindeleben.</h1>
+      <p class="sub">
+        Mit Ihrer Unterstützung fördern Sie das kulturelle, bildungsbezogene und gemeinschaftliche Leben vor Ort.
+        Ihre Spende kommt der Gemeinde direkt zugute.
+      </p>
+    </section>
+
+    <section class="areas">
+      <div class="area">
+        <h2 class="area-title">Gemeinschaft</h2>
+        <p class="area-text">
+          Für ein starkes Miteinander, laufende Angebote und einen verlässlichen Ort der Begegnung.
+        </p>
+      </div>
+      <div class="area">
+        <h2 class="area-title">Bildung</h2>
+        <p class="area-text">
+          Für Bildungsangebote, Kinder- und Jugendunterricht sowie die Weitergabe von Wissen und Werten.
+        </p>
+      </div>
+      <div class="area">
+        <h2 class="area-title">Kultur & Gemeinde</h2>
+        <p class="area-text">
+          Für gemeinschaftliche Veranstaltungen, soziale Angebote und ein lebendiges Miteinander.
+        </p>
+      </div>
+    </section>
+
+    <section class="main">
+      <div class="quote">
+        „Jede Spende ist ein Beitrag für eine lebendige Gemeinde und eine starke Zukunft vor Ort.“
+      </div>
+
+      <div class="transfer-box">
+        <h2 class="section-title">Spende per Überweisung</h2>
+        <p class="transfer-lead">
+          Wenn Sie die Arbeit der Kakar Foundation für Gemeinde, Gemeinschaft, Bildung und Kultur unterstützen möchten,
+          nutzen Sie bitte die folgenden Bankdaten.
+        </p>
+
+        <div class="bank-table">
+          <div class="bank-row">
+            <div class="label">Empfänger</div>
+            <div class="data">Kakar-Stiftung</div>
+          </div>
+          <div class="bank-row">
+            <div class="label">IBAN</div>
+            <div class="data">DE44 7025 0150 0023 8005 35</div>
+          </div>
+          <div class="bank-row">
+            <div class="label">BIC</div>
+            <div class="data">BYLADEM1KMS</div>
+          </div>
+          <div class="bank-row">
+            <div class="label">Bank</div>
+            <div class="data">Kreissparkasse München Starnberg Ebersberg</div>
+          </div>
+          <div class="bank-row">
+            <div class="label">Verwendungszweck</div>
+            <div class="data">Spende Gemeinde</div>
+          </div>
+        </div>
+
+        <div class="qr-block">
+          <div class="qr-shell">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=800x800&data=BCD%0A002%0A1%0ASCT%0ABYLADEM1KMS%0AKakar-Stiftung%0ADE44702501500023800535%0AEUR0%0A%0ASpende%20Gemeinde"
+              alt="Banking-QR für die Überweisung an die Kakar-Stiftung"
+            />
+          </div>
+          <div class="qr-caption">
+            Banking-QR scannen und die Überweisungsdaten direkt in einer Banking-App übernehmen.
+          </div>
+        </div>
+
+        <div class="hint">
+          Alternativ können Sie die Überweisung auch manuell mit den genannten Bankdaten ausführen.
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <div class="footer-main">Kakar Foundation</div>
+        <div class="footer-sub">
+          Für Gemeinde, Gemeinschaft, Bildung und kulturelles Leben.
+        </div>
+      </div>
+      <div class="web">kakar-foundation.com</div>
+    </footer>
+  </main>
+</body>
+</html>

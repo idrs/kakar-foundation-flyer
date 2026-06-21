@@ -13,3 +13,8 @@ Designed to match the visual language of the Kakar Foundation website.
 - `banktransfer.html` – text-based poster draft with bank transfer section
 
 - `community.html` – community-focused mosque/gemeinde donation poster
+
+- `community-print.html` – print-optimized poster source
+- `kakar-poster-community-a0.pdf` – print PDF in DIN A0
+- `kakar-poster-community-a1.pdf` – print PDF in DIN A1
+- `kakar-poster-community-a2.pdf` – print PDF in DIN A2
